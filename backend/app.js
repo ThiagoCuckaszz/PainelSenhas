@@ -3,11 +3,18 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+var cors = require('cors'); // Importe o pacote cors
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
 var app = express();
+
+// Configuração do CORS - Permita acesso a partir de http://localhost:5173
+app.use(cors({
+  origin: 'http://localhost:5173',
+  methods: 'GET,POST', // Permita métodos GET e POST
+}));
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
