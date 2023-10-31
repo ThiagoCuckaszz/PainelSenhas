@@ -9,53 +9,60 @@ db.serialize(function () {
   db.run('CREATE TABLE IF NOT EXISTS fichas (id INTEGER PRIMARY KEY AUTOINCREMENT, tipo TEXT, numero INT, hora DATETIME)');
 });
 
-// Utilize um objeto para rastrear o número de ficha por tipo
 let numeroFichas = {
-  Consulta: 0,
-  Preventivo: 0,
-  "Exames Laboratoriais": 0,
-  "Exames Não Laboratoriais": 0,
+  Consulta: null,
+  Preventivo: null,
+  "Exames Laboratoriais": null,
+  "Exames Não Laboratoriais": null,
 };
 
-let dataUltimaFicha = new Date().toLocaleDateString();
+let dataUltimaFicha = null;
 
-// Função para obter a última ficha impressa do banco de dados
 function obterUltimaFichaImprimida() {
-  db.all('SELECT tipo, MAX(numero) as lastFicha FROM fichas GROUP BY tipo', function (err, rows) {
-    if (!err && rows) {
-      rows.forEach((row) => {
-        if (row.tipo && row.lastFicha) {
-          numeroFichas[row.tipo] = row.lastFicha;
-        }
-      });
+  const dataAtual = new Date().toLocaleDateString();
+
+  if (dataUltimaFicha !== null && dataAtual !== dataUltimaFicha) {
+    for (const tipo in numeroFichas) {
+      numeroFichas[tipo] = 0;
     }
-  });
+  } else {
+    db.all('SELECT tipo, MAX(numero) as lastFicha FROM fichas WHERE data = ? GROUP BY tipo', [dataAtual], function (err, rows) {
+      if (!err && rows) {
+        rows.forEach((row) => {
+          if (row.tipo && row.lastFicha) {
+            numeroFichas[row.tipo] = row.lastFicha;
+          }
+        });
+      }
+    });
+  }
+
+  dataUltimaFicha = dataAtual;
 }
 
-// Chame a função para obter a última ficha impressa ao inicializar o aplicativo
+
 obterUltimaFichaImprimida();
+
 
 function gerarFicha(tipoFicha, res) {
   const dataAtual = new Date().toLocaleDateString();
 
   if (dataAtual !== dataUltimaFicha) {
-    // A data mudou desde a última ficha
-    dataUltimaFicha = dataAtual; // Atualize a data da última ficha
-    obterUltimaFichaImprimida(); // Recarregue o número de fichas a partir do banco de dados
+    dataUltimaFicha = dataAtual;
+    obterUltimaFichaImprimida();
   } else {
-    // Ainda é o mesmo dia, apenas incremente o número da ficha
     numeroFichas[tipoFicha]++;
   }
 
   const ficha = `${numeroFichas[tipoFicha].toString().padStart(3, '0')}`;
 
-  // Configura a impressora
+
   let printer = new ThermalPrinter({
     type: PrinterTypes.EPSON,
     interface: 'tcp://192.168.10.31'
   });
 
-  // Restante do código de configuração da impressora e impressão
+
   printer.alignCenter();
   printer.setTextSize(1, 1);
   printer.println("Fichas");
@@ -82,7 +89,7 @@ function gerarFicha(tipoFicha, res) {
   }
 }
 
-// Rota para gerar fichas de consulta
+
 router.post('/consulta', function (req, res, next) {
   gerarFicha("Consulta", res);
 });
