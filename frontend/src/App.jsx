@@ -10,7 +10,7 @@ function App() {
     try {
       const response = await axios.post(`http://localhost:3000/${tipoFicha}`);
       console.log(response.data);
-      setError(null); // Limpa qualquer erro anterior
+      setError(null); 
     } catch (error) {
       console.error('Erro na solicitação ao backend:', error);
       setError('Falha na impressão. Verifique a conexão com a impressora.');
@@ -19,12 +19,12 @@ function App() {
 
   const handleRetryClick = async () => {
     setRetrying(true);
-    setError(null); // Limpa o erro
+    setError(null); 
 
     try {
       const response = await axios.get('http://localhost:3000/reconectar');
       console.log(response.data);
-      setError(null); // Limpa qualquer erro de reconexão
+      setError(null); 
     } catch (error) {
       console.error('Erro na tentativa de reconexão:', error);
       setError('Falha na reconexão com a impressora.');
