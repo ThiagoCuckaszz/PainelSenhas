@@ -42,12 +42,6 @@ function App() {
         <button onClick={() => handleButtonClick('exames-laboratoriais')}>EXAMES LABORATORIAIS</button>
         <button onClick={() => handleButtonClick('exames-nao-laboratoriais')}>EXAMES NÃO LABORATORIAIS</button>
       </div>
-      {error && (
-        <div>
-          <p>{error}</p>
-          {!retrying && <button onClick={handleRetryClick}>Tentar Reconexão</button>}
-        </div>
-      )}
       <img src="/logo.png" className="logo" alt="Saude logo" />
       <p className="read-the-docs">By Thiago Cuckasz</p>
     </div>
