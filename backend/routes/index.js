@@ -38,12 +38,8 @@ router.post('/atender_exames-nao-laboratoriais', function (req, res, next) {
   atender("Exames Não Laboratoriais", res);
 });
 
-router.get('/painel', function (req, res, next) {
-
-});
-
 router.get('/ficha-em-andamento', function (req, res, next) {
-  // Consulte o banco de dados para obter todas as fichas em andamento
+
   db.all('SELECT tipo, MIN(numero) as lastFicha FROM fichas WHERE atendido = "0" GROUP BY tipo', function (err, fichasEmAndamento) {
     if (err) {
       console.error(err);
