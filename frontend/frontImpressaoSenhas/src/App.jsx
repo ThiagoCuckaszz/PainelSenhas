@@ -36,7 +36,7 @@ function App() {
   return (
     <div>
       <img src="/logo.png" className="logo" alt="Saude logo" />
-      <h1>Totem da Saúde: Tire Sua Senha</h1>
+      <h1>Retire Sua Senha</h1>
       <div className="card">
         <button className='btn_inciais' onClick={() => handleButtonClick('consulta')}>CONSULTA</button>
         <button className='btn_inciais'onClick={() => handleButtonClick('preventivo')}>PREVENTIVO</button>

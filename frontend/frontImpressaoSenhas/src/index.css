@@ -3,6 +3,8 @@
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
   background-color: #212121;
+  user-select: none;
+  height: auto;
 }
 
 h1 {
@@ -34,7 +36,7 @@ h1 {
   background: linear-gradient(to right, #0D3859, #296F85); 
   background-size: 200% 100%; 
   transition: background-position 0.3s ease; 
-  
+  text-align: center;
 }
 
 
@@ -51,7 +53,8 @@ h1 {
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
   background: linear-gradient(to right, #0D3859, #296F85); 
   background-size: 200% 100%; 
-  transition: background-position 0.3s ease; 
+  transition: background-position 0.3s ease;
+  text-align: center;
 }
 
 .btn_laboratoriais:hover, .btn_inciais:hover {
@@ -60,4 +63,54 @@ h1 {
 
 }
 
+@media only screen and (max-width: 1215px) {
 
+  .logo{
+    width: 30%;
+  }
+
+  h1{
+    font-size: 30px;
+  }
+  
+  .btn_inciais{
+    width: 85%;
+    font-size: 2em;
+    padding: 1.5em 1em 1.5em 1em;
+    margin: 12px;
+  }
+  
+  
+  .btn_laboratoriais {
+    margin: 12px;
+    width: 85%;
+    font-size: 2em;
+    padding: 1.5em 1em 1.5em 1em;
+  }
+}
+
+@media only screen and (max-width: 700px){
+    
+  .logo{
+    width: 50%;
+  }
+
+  h1{
+    font-size: 30px;
+  }
+
+  .btn_inciais{
+    width: 80%;
+    font-size: 1em;
+    padding: 1.5em 1em 1.5em 1em;
+    margin: 10px;
+  }
+  
+  
+  .btn_laboratoriais {
+    width: 80%;
+    font-size: 1em;
+    padding: 1.5em 1em 1.5em 1em;
+    margin: 10px;
+  }
+}
