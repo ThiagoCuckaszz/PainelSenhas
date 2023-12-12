@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 const sqlite3 = require('sqlite3').verbose();
-const {obterUltimaFichaImprimida, gerarFicha, atender} = require('./fichasService');
+const {gerarFicha, atender} = require('./fichasService');
 
 const db = new sqlite3.Database('fichas.db');
 
@@ -37,6 +37,33 @@ router.post('/atender_exames-laboratoriais', function (req, res, next) {
 router.post('/atender_exames-nao-laboratoriais', function (req, res, next) {
   atender("Exames Nao Laboratoriais", res);
 });
+
+router.get('/ultimas-fichas-por-tipo', function (req, res, next) {
+  const tipos = ['Consulta', 'Preventivo', 'Exames Laboratoriais', 'Exames Nao Laboratoriais'];
+  const ultimasFichas = {};
+  const dataAtual = new Date().toLocaleDateString();
+
+  tipos.forEach(tipo => {
+    db.all(
+      'SELECT tipo, numero FROM fichas WHERE atendido = "1" AND tipo = ? AND data = ? ORDER BY numero DESC LIMIT 3',
+      [tipo, dataAtual],
+      function (err, result) {
+        if (err) {
+          console.error(err);
+          return res.status(500).send('Erro ao consultar o banco de dados');
+        }
+
+        ultimasFichas[tipo] = result;
+        
+        // Verifica se já obteve as últimas fichas para todos os tipos
+        if (Object.keys(ultimasFichas).length === tipos.length) {
+          res.json({ ultimasFichas });
+        }
+      }
+    );
+  });
+});
+
 
 router.get('/ficha-em-andamento', function (req, res, next) {
   const dataAtual = new Date().toLocaleDateString();

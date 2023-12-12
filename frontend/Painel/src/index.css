@@ -5,7 +5,7 @@
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #d9d9d9;
+  background-color: #212121;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -13,22 +13,18 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-
-
-#tipoSelect{
-  width: 70%;
-  padding: 20px 20px 20px 20px;
-  border-radius: 8px;
-  text-align: center;
-  font-size: 1.3em;;
-  cursor: pointer;
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+#tipoSelect {
   border: none;
-  text-align: left;
+  padding: 15px;
+  border-radius: 5px;
   outline: none;
+  background-color: #3b3b3b;
+  width: 75%;
 }
 
-
+option {
+  font-size: 20px;
+}
 
 button {
   border-radius: 8px;
@@ -49,19 +45,26 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+.logo-painel {
+  width: 35%;
 }
 
-.logo-painel{
-  width: 40%;
+.titulo-painel-selecionar {
+  font-size: 30px;
+  margin-top: 2em;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card {
+  background: #3b3b3b;
+  margin-top: 2em;
+  border-radius: 5px;
+  margin-bottom: 2em;
+  padding: 20px 225px 20px 225px;
+  font-size: 30px;
 }
