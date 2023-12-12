@@ -2,13 +2,13 @@
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #212121;
+  background-color: #ffffff;
   user-select: none;
   height: auto;
 }
 
 h1 {
-  color: rgb(255, 255, 255);
+  color: #0D3859;
   font-size: 5em;
   font-style: italic;
   text-align: center;

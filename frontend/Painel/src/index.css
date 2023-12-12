@@ -5,7 +5,7 @@
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #212121;
+  background-color: #d9d9d9;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -13,40 +13,21 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-#tipoSelect {
-  border: none;
-  padding: 15px;
-  border-radius: 5px;
-  outline: none;
-  background-color: #3b3b3b;
-  width: 75%;
-}
-
-option {
-  font-size: 20px;
-}
-
-button {
+#tipoSelect{
+  width: 70%;
+  padding: 20px 20px 20px 20px;
   border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
+  text-align: center;
+  font-size: 1.3em;;
   cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  border: none;
+  text-align: left;
+  outline: none;
 }
 
 .logo-painel {
-  width: 35%;
+  width: 40%;
 }
 
 .titulo-painel-selecionar {

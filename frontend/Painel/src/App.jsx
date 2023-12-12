@@ -77,14 +77,14 @@ function App() {
 
   return (
     <div className='container'>
-      <img className='logo-painel' src="/logo.png" alt="" />
+      {/* <img className='logo-painel' src="/logo.png" alt="" /> */}
       {error && <p className="error-message">{error}</p>}
 
       {/* Lista suspensa para selecionar o tipo */}
       <label className='titulo-painel-selecionar' htmlFor="tipoSelect">Selecione o Tipo:</label>
       <br></br>
       <select id="tipoSelect" value={tipoSelecionado} onChange={handleTipoChange}>
-        <option value="">Selecione...</option>
+        <option disabled value="">Selecione...</option>
         <option value="Consulta">Consulta</option>
         <option value="Exames Laboratoriais">Exames Laboratoriais</option>
         <option value="Exames Nao Laboratoriais">Exames Nao Laboratoriais</option>
