@@ -45,7 +45,7 @@ router.get('/ultimas-fichas-por-tipo', function (req, res, next) {
 
   tipos.forEach(tipo => {
     db.all(
-      'SELECT tipo, numero FROM fichas WHERE atendido = "1" AND tipo = ? AND data = ? ORDER BY numero DESC LIMIT 3',
+      'SELECT tipo, numero FROM fichas WHERE atendido = "1" AND tipo = ? AND data = ? ORDER BY numero DESC LIMIT 1',
       [tipo, dataAtual],
       function (err, result) {
         if (err) {

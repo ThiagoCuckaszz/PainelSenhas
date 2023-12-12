@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './App.css';
+import io from "socket.io-client"
+const socket = io.connect("http://localhost:3001")
 
 const handleRequestError = (error, errorMessage) => {
   console.error('Erro na solicitação ao backend:', error);
@@ -52,19 +54,23 @@ function App() {
       return (
         <div className="card">
           <p>Tipo: {tipo}</p>
+           <div className="div-ultima-ficha">
           <p>Última Ficha: {lastFicha}</p>
         </div>
+        </div>
+        
       );
+      
     } else {
       return (
         <div>
           <div className="card">
-            <p>Nenhuma informação disponível para o tipo {tipo}.</p>
+            <p>Nenhuma consulta marcada.</p>
             <div>
             </div>
           </div>
           <button onClick={() => fetchData()}>
-            TODAS FICHAS ATENDIDAS ATUALIZAR
+                CHAMAR PRÓXIMA FICHA
           </button>
         </div>
       );
@@ -77,18 +83,20 @@ function App() {
 
   return (
     <div className='container'>
-      {/* <img className='logo-painel' src="/logo.png" alt="" /> */}
+
+      <img className='logo-painel' src="/logo.png" alt="" />
+      <br />
       {error && <p className="error-message">{error}</p>}
 
       {/* Lista suspensa para selecionar o tipo */}
-      <label className='titulo-painel-selecionar' htmlFor="tipoSelect">Selecione o Tipo:</label>
+      <label className='titulo-painel-selecionar' htmlFor="tipoSelect">Selecione o atendimento</label>
       <br></br>
       <select id="tipoSelect" value={tipoSelecionado} onChange={handleTipoChange}>
         <option disabled value="">Selecione...</option>
         <option value="Consulta">Consulta</option>
+        <option value="Preventivo">Preventivo</option>
         <option value="Exames Laboratoriais">Exames Laboratoriais</option>
         <option value="Exames Nao Laboratoriais">Exames Nao Laboratoriais</option>
-        <option value="Preventivo">Preventivo</option>
       </select>
 
       {tipoSelecionado && exibirInformacoesPorTipo(tipoSelecionado)}

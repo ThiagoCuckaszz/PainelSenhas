@@ -12,7 +12,7 @@ var app = express();
 
 // Configuração do CORS - Permita acesso a partir de http://localhost:5173
 app.use(cors({
-  origin: 'http://localhost:5173',
+  origin: '*',
   methods: 'GET,POST', // Permita métodos GET e POST
 }));
 
