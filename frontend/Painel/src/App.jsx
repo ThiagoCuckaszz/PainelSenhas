@@ -43,6 +43,7 @@ function App() {
     fetchData();
   }, []);
 
+
   const exibirInformacoesPorTipo = (tipo) => {
     const informacoesPorTipo = dados.find(item => item.tipo === tipo);
 
@@ -56,8 +57,12 @@ function App() {
       );
     } else {
       return (
-        <div className="card">
-          <p>Nenhuma informação disponível para o tipo {tipo}.</p>
+        <div>
+          <div className="card">
+            <p>Nenhuma informação disponível para o tipo {tipo}.</p>
+            <div>
+            </div>
+          </div>
           <button onClick={() => fetchData()}>
             TODAS FICHAS ATENDIDAS ATUALIZAR
           </button>
@@ -71,12 +76,13 @@ function App() {
   };
 
   return (
-    <div>
-      <h1>Atendimento Senhas</h1>
+    <div className='container'>
+      <img className='logo-painel' src="/logo.png" alt="" />
       {error && <p className="error-message">{error}</p>}
 
       {/* Lista suspensa para selecionar o tipo */}
-      <label htmlFor="tipoSelect">Selecione o Tipo:</label>
+      <label className='titulo-painel-selecionar' htmlFor="tipoSelect">Selecione o Tipo:</label>
+      <br></br>
       <select id="tipoSelect" value={tipoSelecionado} onChange={handleTipoChange}>
         <option value="">Selecione...</option>
         <option value="Consulta">Consulta</option>
@@ -93,8 +99,6 @@ function App() {
         .map((item, index) => (
           <AtenderButton key={index} tipo={item.tipo} onAtender={handleButtonClick} />
         ))}
-
-      <p className="read-the-docs">By Thiago Cuckasz</p>
     </div>
   );
 }

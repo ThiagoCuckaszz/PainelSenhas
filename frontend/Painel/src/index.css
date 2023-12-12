@@ -5,7 +5,7 @@
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  background-color: #212121;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -13,26 +13,17 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+#tipoSelect {
+  border: none;
+  padding: 15px;
+  border-radius: 5px;
+  outline: none;
+  background-color: #3b3b3b;
+  width: 75%;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+option {
+  font-size: 20px;
 }
 
 button {
@@ -54,15 +45,26 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+.logo-painel {
+  width: 35%;
+}
+
+.titulo-painel-selecionar {
+  font-size: 30px;
+  margin-top: 2em;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card {
+  background: #3b3b3b;
+  margin-top: 2em;
+  border-radius: 5px;
+  margin-bottom: 2em;
+  padding: 20px 225px 20px 225px;
+  font-size: 30px;
 }

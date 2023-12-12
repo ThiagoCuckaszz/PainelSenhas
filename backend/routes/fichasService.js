@@ -11,7 +11,7 @@ let numeroFichas = {
     "Consulta": 0,
     "Preventivo": 0,
     "Exames Laboratoriais": 0,
-    "Exames Não Laboratoriais": 0,
+    "Exames Nao Laboratoriais": 0,
 };
 
 let dataUltimaFicha = null;
@@ -52,23 +52,23 @@ function gerarFicha(tipoFicha, res) {
         type: PrinterTypes.EPSON,
         interface: 'tcp://192.168.10.31',
         options: {
-            timeout: 500000
+            timeout: 5000000000
         }
     });
 
-    printer.alignCenter();
-    printer.setTextSize(1, 1);
-    printer.println("Fichas");
-    printer.newLine();
-    printer.println('-------------------');
-    printer.println(tipoFicha);
-    printer.underlineThick(false);
-    printer.newLine();
-    printer.println(`${ficha}`);
-    printer.newLine();
-    printer.setTextSize(0, 0);
-    printer.println(dataHoraAtual);
-    printer.cut();
+    // printer.alignCenter();
+    // printer.setTextSize(1, 1);
+    // printer.println("Fichas");
+    // printer.newLine();
+    // printer.println('-------------------');
+    // printer.println(tipoFicha);
+    // printer.underlineThick(false);
+    // printer.newLine();
+    // printer.println(`${ficha}`);
+    // printer.newLine();
+    // printer.setTextSize(0, 0);
+    // printer.println(dataHoraAtual);
+    // printer.cut();
 
     try {
         printer.execute();
