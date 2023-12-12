@@ -28,7 +28,6 @@ function App() {
 
   const handleButtonClick = async (tipoFicha) => {
     try {
-      // Construa a rota a partir do tipo selecionado
       const rota = `atender_${tipoFicha.toLowerCase().replace(/\s/g, '-')}`;
       await axios.post(`http://localhost:3000/${rota}`);
       console.log('Ficha atendida:', tipoFicha);
@@ -69,21 +68,23 @@ function App() {
   const handleTipoChange = (event) => {
     setTipoSelecionado(event.target.value);
   };
+  
 
   return (
     <div>
-      <h1>Atendimento Senhas</h1>
+      {/* <img className='logo-painel' src="/logo.png" alt="" /> */}
       {error && <p className="error-message">{error}</p>}
 
-      {/* Lista suspensa para selecionar o tipo */}
       <label htmlFor="tipoSelect">Selecione o Tipo:</label>
+      <div className='div-select'>
       <select id="tipoSelect" value={tipoSelecionado} onChange={handleTipoChange}>
-        <option value="">Selecione...</option>
+        <option disabled value="">Selecione...</option>
         <option value="Consulta">Consulta</option>
         <option value="Exames Laboratoriais">Exames Laboratoriais</option>
         <option value="Exames Nao Laboratoriais">Exames Nao Laboratoriais</option>
         <option value="Preventivo">Preventivo</option>
       </select>
+      </div>
 
       {tipoSelecionado && exibirInformacoesPorTipo(tipoSelecionado)}
 
@@ -94,7 +95,6 @@ function App() {
           <AtenderButton key={index} tipo={item.tipo} onAtender={handleButtonClick} />
         ))}
 
-      <p className="read-the-docs">By Thiago Cuckasz</p>
     </div>
   );
 }

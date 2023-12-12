@@ -15,15 +15,11 @@ const Painel = () => {
       }
     };
 
-    // Execute a busca ao montar o componente
-    fetchFichasEmAndamento();
 
-    // Defina um intervalo para buscar periodicamente as fichas em andamento (opcional)
+    fetchFichasEmAndamento();
     const intervalId = setInterval(() => {
       fetchFichasEmAndamento();
-    }, 5000); // Atualize a cada 5 segundos, por exemplo
-
-    // Limpe o intervalo ao desmontar o componente
+    }, 5000);
     return () => clearInterval(intervalId);
   }, []);
 
