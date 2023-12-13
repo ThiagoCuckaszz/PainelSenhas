@@ -21,8 +21,6 @@ Certifique-se de ter instalado:
    ```bash
    git clone https://github.com/seu-usuario/seu-projeto.git
 
-```bash
 1 - Backend (Node.js)
-   Navegue até o diretório do backend:
-      Instale as dependências:
-         npm install
+```bash
+   npm install
