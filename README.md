@@ -17,7 +17,7 @@ Certifique-se de ter instalado:
 ## Clone o repositório:
 
  ```bash
- git clone [https://github.com/seu-usuario/seu-projeto.git](https://github.com/ThiagoCuckaszz/PainelSenhas)
+ git clone git clone [https://github.com/seu-usuario/seu-projeto.git](https://github.com/ThiagoCuckaszz/PainelSenhas)
    ```
 
 ## Intalacão Backend (Node.js)
