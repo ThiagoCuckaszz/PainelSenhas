@@ -17,6 +17,7 @@ function App() {
   const [error, setError] = useState(null);
   const [dados, setDados] = useState([]);
   const [tipoSelecionado, setTipoSelecionado] = useState('');
+  const [autoFetchInterval, setAutoFetchInterval] = useState(null);
 
   const fetchData = async () => {
     try {
@@ -41,10 +42,21 @@ function App() {
     }
   };
 
+  const startAutoFetch = () => {
+    const intervalId = setInterval(fetchData, 5000);
+    setAutoFetchInterval(intervalId);
+  };
+
   useEffect(() => {
     fetchData();
-  }, []);
+    startAutoFetch();
 
+    return () => {
+      if (autoFetchInterval) {
+        clearInterval(autoFetchInterval);
+      }
+    };
+  }, []);
 
   const exibirInformacoesPorTipo = (tipo) => {
     const informacoesPorTipo = dados.find(item => item.tipo === tipo);
@@ -54,13 +66,11 @@ function App() {
       return (
         <div className="card">
           <p>Tipo: {tipo}</p>
-           <div className="div-ultima-ficha">
-          <p>Última Ficha: {lastFicha}</p>
+          <div className="div-ultima-ficha">
+            <p>Última Ficha: {lastFicha}</p>
+          </div>
         </div>
-        </div>
-        
       );
-      
     } else {
       return (
         <div>
@@ -69,9 +79,6 @@ function App() {
             <div>
             </div>
           </div>
-          <button onClick={() => fetchData()}>
-                CHAMAR PRÓXIMA FICHA
-          </button>
         </div>
       );
     }

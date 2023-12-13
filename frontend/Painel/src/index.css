@@ -9,7 +9,7 @@ body{
 .titulo-painel-selecionar{
 
     color: #0D3859;
-    font-size: 5em;
+    font-size: 3em;
     font-style: italic;
     text-align: center;
   
@@ -21,10 +21,10 @@ select{
   padding: 30px 30px 30px 30px;
   border-radius: 10px;
   color: #fff;
+  width: 45%;
   outline: none;
   font-size: 20px;
   margin-top: 30px;
-  min-width: 900px;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
   background: linear-gradient(to right, #0D3859, #296F85);
 
@@ -36,13 +36,13 @@ option{
 
 
 button{
+  width: 45%;
   padding: 30px 30px 30px 30px;
   border-radius: 10px;
   color: #fff;
   outline: none;
   font-size: 20px;
   margin-top: 30px;
-  min-width: 900px;
   cursor: pointer;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
   background: linear-gradient(to right, #0D3859, #296F85);
@@ -64,5 +64,51 @@ p{
   margin-top: 30px;
   margin-bottom: 30px;
   align-self: center;
+}
+
+@media only screen and (max-width: 1215px) {
+
+  .logo-painel{
+    width: 30%;
+  }
+
+  .titulo-painel-selecionar{
+    font-size: 30px;
+  }
+  
+  select , button{
+    width: 90%;
+    font-size: 15px;
+  }
+
+  p {
+    font-size: 30px;
+  }
+
+}
+
+@media only screen and (max-width: 700px){
+    
+  .logo-painel{
+    width: 50%;
+  }
+
+  .titulo-painel-selecionar{
+    font-size: 30px;
+  }
+  }
+  
+  
+
+
+@media only screen and (max-width: 200px){
+    
+  .logo{
+    width: 80%;
+  }
+
+  h1{
+    font-size: 20px;
+  }
 }
 
