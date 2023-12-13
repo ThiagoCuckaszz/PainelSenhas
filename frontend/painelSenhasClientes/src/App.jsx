@@ -7,10 +7,12 @@ export default function App() {
 
   const fetchData = async () => {
     try {
-      const response = await axios.get('http://localhost:3000/ultimas-fichas-por-tipo');
-      console.log(response)
+      const response = await axios.get(
+        "http://localhost:3000/ultimas-fichas-por-tipo"
+      );
+      console.log(response);
       const fichasEmAndamento = response.data.fichasEmAndamento;
-  
+
       if (fichasEmAndamento.length > 0) {
         const lastFicha = fichasEmAndamento[fichasEmAndamento.length - 1];
         setLastTicket(lastFicha.senha);
@@ -20,7 +22,6 @@ export default function App() {
       console.log(error);
     }
   };
-  
 
   useEffect(() => {
     fetchData();

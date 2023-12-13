@@ -1,5 +1,5 @@
 // Em um novo arquivo, por exemplo, Painel.jsx
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 
 const Painel = () => {
   const [fichasEmAndamento, setFichasEmAndamento] = useState([]);
@@ -7,14 +7,13 @@ const Painel = () => {
   useEffect(() => {
     const fetchFichasEmAndamento = async () => {
       try {
-        const response = await fetch('/ficha-em-andamento');
+        const response = await fetch("/ficha-em-andamento");
         const data = await response.json();
         setFichasEmAndamento(data.fichasEmAndamento);
       } catch (error) {
-        console.error('Erro ao obter fichas em andamento:', error);
+        console.error("Erro ao obter fichas em andamento:", error);
       }
     };
-
 
     fetchFichasEmAndamento();
     const intervalId = setInterval(() => {
