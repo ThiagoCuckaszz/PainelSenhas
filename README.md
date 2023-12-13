@@ -1,4 +1,4 @@
-Totem Senhas de Atendimento
+# Totem Senhas de Atendimento
 
 O Sistema de Atendimento de Senhas para a Unidade de Saúde em Cruz Machado
 foi desenvolvido para otimizar e organizar o processo de atendimento ao público,
