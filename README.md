@@ -21,6 +21,6 @@ Certifique-se de ter instalado:
    ```bash
    git clone https://github.com/seu-usuario/seu-projeto.git
 
-      1 - Backend (Node.js)
-      ```bash
-         npm install
+1 - Backend (Node.js)
+```bash
+npm install
