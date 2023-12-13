@@ -59,6 +59,12 @@ Inicie o aplicativo React:
    npm start
 ```
 
+## Intalacão Axios
+
+ ```bash
+   npm install axios
+```
+
 ## 🤝 Colaboradores
 
 <table>
