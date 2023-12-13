@@ -67,15 +67,15 @@ Inicie o aplicativo React:
       <a href="#" title="defina o titulo do link">
         <img src="https://avatars.githubusercontent.com/u/111919840?v=4" width="100px;" alt="Foto do Emanoel Vinicius Castanha no GitHub"/><br>
         <sub>
-          <b>Iuri Silva</b>
+          <b>Emanoel Vinicius Castanha</b>
         </sub>
       </a>
     </td>
     <td align="center">
       <a href="#" title="defina o titulo do link">
-        <img src="https://s2.glbimg.com/FUcw2usZfSTL6yCCGj3L3v3SpJ8=/smart/e.glbimg.com/og/ed/f/original/2019/04/25/zuckerberg_podcast.jpg" width="100px;" alt="Foto do Mark Zuckerberg"/><br>
+        <img src="https://avatars.githubusercontent.com/u/125368991?v=4" width="100px;" alt="Foto do Thiago cesar cuckasz"/><br>
         <sub>
-          <b>Mark Zuckerberg</b>
+          <b>Thiago cesar cuckasz</b>
         </sub>
       </a>
     </td>
