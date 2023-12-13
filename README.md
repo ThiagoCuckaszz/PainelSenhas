@@ -64,7 +64,7 @@ Inicie o aplicativo React:
 <table>
   <tr>
     <td align="center">
-      <a href="#" title="defina o titulo do link">
+      <a href="#" title="[defina o titulo do link](https://github.com/EmanoelViniciusCastanha)">
         <img src="https://avatars.githubusercontent.com/u/111919840?v=4" width="100px;" alt="Foto do Emanoel Vinicius Castanha no GitHub"/><br>
         <sub>
           <b>Emanoel Vinicius Castanha</b>
@@ -72,7 +72,7 @@ Inicie o aplicativo React:
       </a>
     </td>
     <td align="center">
-      <a href="#" title="defina o titulo do link">
+      <a href="#" title="https://github.com/ThiagoCuckaszz">
         <img src="https://avatars.githubusercontent.com/u/125368991?v=4" width="100px;" alt="Foto do Thiago cesar cuckasz"/><br>
         <sub>
           <b>Thiago cesar cuckasz</b>
