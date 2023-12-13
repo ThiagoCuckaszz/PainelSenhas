@@ -14,13 +14,13 @@ Certifique-se de ter instalado:
 
 ## Instalação
 
-#Clone o repositório:
+## Clone o repositório:
 
  ```bash
  git clone https://github.com/seu-usuario/seu-projeto.git
    ```
 
-##Intalacão Backend (Node.js)
+## Intalacão Backend (Node.js)
 
    ```bash
    cd backend
