@@ -23,8 +23,12 @@ Certifique-se de ter instalado:
 
 1 - Backend (Node.js)
 
-```bash
-cd backend
+   ```bash
+   cd backend
+```
 
-     ```bash
-     npm install
+2 - Navegue até o diretório do backend:
+
+```bash
+npm install
+```
