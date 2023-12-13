@@ -14,25 +14,25 @@ Certifique-se de ter instalado:
 
 ## Instalação
 
-1. Clone o repositório:
+#Clone o repositório:
 
  ```bash
  git clone https://github.com/seu-usuario/seu-projeto.git
    ```
 
-1 - Backend (Node.js)
+#Intalacão Backend (Node.js)
 
    ```bash
    cd backend
 ```
 
-2 - Navegue até o diretório do backend:
+Navegue até o diretório do backend:
 
 ```bash
 npm install
 ```
 
-3 - Inicie o servidor:
+Inicie o servidor:
 
 ```bash
 npm start
