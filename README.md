@@ -38,3 +38,23 @@ Inicie o servidor:
 npm start
 
 ```
+
+## Intalacão Frontend (React)
+
+Abra uma nova janela do terminal e navegue até o diretório do frontend:
+
+ ```bash
+   cd ../frontend
+```
+
+Instale as dependências:
+
+ ```bash
+   npm install
+```
+
+Inicie o aplicativo React:
+
+ ```bash
+   npm start
+```
