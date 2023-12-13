@@ -32,3 +32,10 @@ Certifique-se de ter instalado:
 ```bash
 npm install
 ```
+
+3 - Inicie o servidor:
+
+```bash
+npm start
+
+```
