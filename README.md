@@ -1,5 +1,3 @@
-# Nome do Seu Projeto
-
 Totem Senhas de Atendimento
 
 O Sistema de Atendimento de Senhas para a Unidade de Saúde em Cruz Machado
